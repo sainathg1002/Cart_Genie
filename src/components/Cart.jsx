@@ -2,6 +2,7 @@ import React from "react";
 import { color, motion, vh } from "framer-motion";
 
 function Cart({ cartItems, increaseQty, decreaseQty, removeFromCart }) {
+  const BASE = import.meta.env.BASE_URL || "/";
   const total = cartItems.reduce((sum, item) => sum + item.price * item.qty, 0);
 
   return (
@@ -11,7 +12,7 @@ function Cart({ cartItems, increaseQty, decreaseQty, removeFromCart }) {
       transition={{ duration: 0.3 }}
       style={{ ...styles.cart, position: 'sticky', top: '20px', alignSelf: 'flex-start' }}
     >
-      <h2><img src="/images/cartimg.png" alt="Cart" style={styles.cartIcon} /> Cart</h2>
+      <h2><img src={`${BASE}images/cartimg.png`} alt="Cart" style={styles.cartIcon} /> Cart</h2>
       {cartItems.length === 0 ? (
         <p>Your cart is empty</p>
       ) : (
@@ -32,7 +33,7 @@ function Cart({ cartItems, increaseQty, decreaseQty, removeFromCart }) {
                   </div>
                   <div style={{ textAlign: 'right' }}>
                     <div>₹{item.price * item.qty}</div>
-                    <button onClick={() => removeFromCart(item.id)} style={styles.removeBtn} aria-label={`Remove ${item.name}`}><img src="\images\wrongimg.png" style={styles.wrong}></img></button>
+                    <button onClick={() => removeFromCart(item.id)} style={styles.removeBtn} aria-label={`Remove ${item.name}`}><img src={`${BASE}images/wrongimg.png`} style={styles.wrong}></img></button>
                   </div>
                 </div>
               </div>

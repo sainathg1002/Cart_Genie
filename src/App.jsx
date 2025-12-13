@@ -3,15 +3,16 @@ import ProductList from "./components/ProductList.jsx";
 import Cart from "./components/Cart.jsx";
 
 function App() {
+  const BASE = import.meta.env.BASE_URL || "/";
   const [cartItems, setCartItems] = useState([]);
 
   const products = [
-    { id: 1, name: "Wireless Headphones", price: 999, image: "/images/01_34af94b9-40d7-4956-805e-0cb7df907ef7.webp" },
-    { id: 2, name: "Smartwatch", price: 1999, image: "/images/download.jpg" },
-    { id: 3, name: "Bluetooth Speaker", price: 1499, image: "/images/download (2).jpg" },
-    { id: 4, name: "Gaming Mouse", price: 699, image: "/images/Redragon-M913-Impact-Elite-Wired-and-Wireless-Gaming-Mouse-Black-1-e1722667722926.jpg" },
-    {id:5,name:"Bluetooth speaker",price: 1600,image:"/images/download (1).jpg"},
-    {id:6,name:"Eardopes",price:1300,image:"/images/images.jpg"}
+    { id: 1, name: "Wireless Headphones", price: 999, image: `${BASE}images/01_34af94b9-40d7-4956-805e-0cb7df907ef7.webp` },
+    { id: 2, name: "Smartwatch", price: 1999, image: `${BASE}images/download.jpg` },
+    { id: 3, name: "Bluetooth Speaker", price: 1499, image: `${BASE}images/download (2).jpg` },
+    { id: 4, name: "Gaming Mouse", price: 699, image: `${BASE}images/Redragon-M913-Impact-Elite-Wired-and-Wireless-Gaming-Mouse-Black-1-e1722667722926.jpg` },
+    {id:5,name:"Bluetooth speaker",price: 1600,image:`${BASE}images/download (1).jpg`},
+    {id:6,name:"Eardopes",price:1300,image:`${BASE}images/images.jpg`}
   
   ];
 
